@@ -45,9 +45,6 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; Display options
-(global-linum-mode t)
-(add-hook 'prog-mode-hook 'column-number-mode t)
-(add-hook 'prog-mode-hook 'line-number-mode t)
 (setq-default initial-scratch-message "")
 (setq-default inhibit-splash-screen t)
 (setq-default ring-bell-function 'ignore)
