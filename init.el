@@ -30,6 +30,7 @@
                        lang/html
                        lang/js
                        lang/lisp
+                       lang/org
                        lang/ruby
                        syntax/autopair
                        syntax/check
