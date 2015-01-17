@@ -7,7 +7,7 @@
 
 (packages/add 'yasnippet)
 
-(defun snippet/-hook ()
+(defun snippet/-run-hook ()
   "Start snippet related packages."
   (yas-global-mode t))
 
@@ -15,7 +15,7 @@
   "Hide snippet related packages in modeline."
   (with-eval-after-load 'yasnippet (diminish 'yas-minor-mode)))
 
-(add-hook 'inits/hook 'snippet/-hook)
+(add-hook 'inits/hook 'snippet/-run-hook)
 (with-eval-after-load 'diminish (snippet/-diminish))
 
 ;;; snippet.el ends here

@@ -12,7 +12,7 @@
                 'git-gutter-fringe
                 'git-gutter))
 
-(defun git/-hook ()
+(defun git/-run-hook ()
   "Start git related packages."
   (global-git-gutter-mode t))
 
@@ -26,7 +26,7 @@
   (evil-set-initial-state 'magit-log-edit-mode 'insert)
   (evil-set-initial-state 'git-commit-mode 'insert))
 
-(add-hook 'inits/hook 'git/-hook)
+(add-hook 'inits/hook 'git/-run-hook)
 (with-eval-after-load 'diminish (git/-diminish))
 (with-eval-after-load 'evil (git/-init-evil))
 

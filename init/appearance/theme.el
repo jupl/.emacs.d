@@ -7,7 +7,7 @@
 
 (packages/add 'monokai-theme)
 
-(defun theme/-hook ()
+(defun theme/-run-hook ()
   "Apply theme."
   (load-theme 'monokai t))
 
@@ -21,7 +21,7 @@
   (set-face-attribute 'powerline-evil-motion-face nil :background "#A20C41")
   (set-face-attribute 'powerline-evil-emacs-face nil :background "#A45E0A"))
 
-(add-hook 'inits/hook 'theme/-hook)
+(add-hook 'inits/hook 'theme/-run-hook)
 (with-eval-after-load 'powerline-evil (theme/-init-powerline-evil))
 
 ;;; theme.el ends here

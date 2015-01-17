@@ -7,7 +7,7 @@
 
 (packages/add 'autopair)
 
-(defun autopair/-hook ()
+(defun autopair/-run-hook ()
   "Start autopair."
   (autopair-global-mode))
 
@@ -15,7 +15,7 @@
   "Hide autopair in modeline."
   (with-eval-after-load 'autopair (diminish 'autopair-mode)))
 
-(add-hook 'inits/hook 'autopair/-hook)
+(add-hook 'inits/hook 'autopair/-run-hook)
 (with-eval-after-load 'diminish (autopair/-diminish))
 
 ;;; autopair.el ends here

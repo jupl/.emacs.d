@@ -7,9 +7,10 @@
 
 (packages/add 'linum-relative)
 (when (display-graphic-p)
+  (setq-default blink-cursor-blinks 0)
   (packages/add 'centered-cursor-mode))
 
-(defun cursor/-hook ()
+(defun cursor/-run-hook ()
   "Apply cursor tweaks."
   (add-hook 'prog-mode-hook 'linum-mode t)
   (global-hl-line-mode t)
@@ -23,8 +24,7 @@
   "Set up relative line numbers."
   (setq-default linum-relative-current-symbol ""))
 
-(setq-default blink-cursor-blinks 0)
-(add-hook 'inits/hook 'cursor/-hook)
+(add-hook 'inits/hook 'cursor/-run-hook)
 (with-eval-after-load 'diminish (cursor/-diminish))
 (with-eval-after-load 'linum-relative (cursor/-init-linum-relative))
 

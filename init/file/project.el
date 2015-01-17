@@ -10,7 +10,7 @@
 
 (defvar evil-normal-state-map)
 
-(defun project/-hook ()
+(defun project/-run-hook ()
   "Start project related packages."
   (projectile-global-mode t))
 
@@ -26,7 +26,7 @@
   "Set up project related packages with evil."
   (define-key evil-normal-state-map (kbd "C-u") 'projectile-find-file))
 
-(add-hook 'inits/hook 'project/-hook)
+(add-hook 'inits/hook 'project/-run-hook)
 (with-eval-after-load 'diminish (project/-diminish))
 (with-eval-after-load 'evil (project/-init-evil))
 (with-eval-after-load 'projectile (project/-init))

@@ -9,7 +9,7 @@
 (packages/add 'powerline)
 (packages/add 'powerline-evil)
 
-(defun modeline/-hook ()
+(defun modeline/-run-hook ()
   "Apply modeline tweaks."
   (powerline-evil-center-color-theme))
 
@@ -23,7 +23,7 @@
   "Set up powerline."
   (setq-default powerline-default-separator nil))
 
-(add-hook 'inits/hook 'modeline/-hook)
+(add-hook 'inits/hook 'modeline/-run-hook)
 (with-eval-after-load 'diminish (modeline/-diminish))
 (with-eval-after-load 'powerline (modeline/-init))
 
