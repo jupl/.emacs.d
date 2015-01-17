@@ -21,7 +21,12 @@
   (set-face-attribute 'powerline-evil-motion-face nil :background "#A20C41")
   (set-face-attribute 'powerline-evil-emacs-face nil :background "#A45E0A"))
 
+(defun theme/-init-tabbar ()
+  "Apply tweaks to tabbar to match theme."
+  (setq-default tabbar-ruler-swap-faces t))
+
 (add-hook 'inits/hook 'theme/-run-hook)
 (with-eval-after-load 'powerline-evil (theme/-init-powerline-evil))
+(with-eval-after-load 'tabbar-ruler (theme/-init-tabbar))
 
 ;;; theme.el ends here

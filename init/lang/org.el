@@ -38,8 +38,12 @@
   "Hide org related packages in modeline."
   (with-eval-after-load 'evil-org (diminish 'evil-org-mode)))
 
+(defun org/-init ()
+  "Set up org."
+  (setq-default org-src-fontify-natively t))
+
 (defun org/-init-evil ()
-  "Set up org related packages with evil."
+  "Set up org with evil."
   (evil-set-initial-state 'org-agenda-mode 'normal))
 
 (defun org/-init-evil-leader ()
@@ -61,10 +65,10 @@
   (define-key org-present-mode-keymap (kbd "<prior>") 'org-present-prev)
   (define-key org-present-mode-keymap (kbd "<next>") 'org-present-next))
 
-(setq-default org-src-fontify-natively t)
 (with-eval-after-load 'diminish (org/-diminish))
 (with-eval-after-load 'evil (org/-init-evil))
 (with-eval-after-load 'evil-leader (org/-init-evil-leader))
+(with-eval-after-load 'org (org/-init))
 (with-eval-after-load 'org-present (org/-init-present))
 
 ;;; org.el ends here

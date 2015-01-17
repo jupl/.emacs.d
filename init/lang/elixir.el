@@ -25,11 +25,14 @@
 
 (defun elixir/-init ()
   "Set up Elixir mode."
-  (add-to-list 'elixir-mode-hook 'elixir/-mode)
-  (with-eval-after-load 'web-mode
-    (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))))
+  (add-to-list 'elixir-mode-hook 'elixir/-mode))
+
+(defun elixir/-init-web ()
+  "Set up web mode for Elixir templates."
+  (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode)))
 
 (with-eval-after-load 'diminish (elixir/-diminish))
 (with-eval-after-load 'elixir-mode (elixir/-init))
+(with-eval-after-load 'web-mode (elixir/-init-web))
 
 ;;; elixir.el ends here

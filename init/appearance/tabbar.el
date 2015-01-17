@@ -12,7 +12,6 @@
 
 (defun tabbar/-init ()
   "Set up tabbar."
-  (setq-default tabbar-ruler-swap-faces t)
   (global-set-key (kbd "C-<tab>") 'tabbar-mode))
 
 (defun tabbar/-init-evil ()

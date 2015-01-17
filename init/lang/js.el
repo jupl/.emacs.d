@@ -15,7 +15,7 @@
 
 (defvar company-backends)
 
-(defun js/-mode()
+(defun js/-mode ()
   "Additional setup to JS mode."
   (setq-default comment-start "// ")
   (setq-default comment-end "")

@@ -11,8 +11,9 @@
 (packages/add 'rainbow-mode)
 (packages/add 'scss-mode)
 
-(defun css/-hook ()
+(defun css/-run-hook ()
   "Link plugins for css related modules."
+  (setq-default css-indent-offset 2)
   (add-hook 'css-mode-hook 'emmet-mode)
   (add-hook 'css-mode-hook 'rainbow-mode)
   (add-hook 'less-css-mode-hook 'emmet-mode)
@@ -29,8 +30,7 @@
   "Set up scss mode."
   (setq-default scss-compile-at-save nil))
 
-(setq-default css-indent-offset 2)
-(add-hook 'inits/hook 'css/-hook)
+(add-hook 'inits/hook 'css/-run-hook)
 (with-eval-after-load 'diminish (css/-diminish))
 (with-eval-after-load 'scss-mode (css/-init-scss))
 
