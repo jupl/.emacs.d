@@ -9,7 +9,9 @@
 
 (defun theme/-run-hook ()
   "Apply theme."
-  (load-theme 'monokai t))
+  (load-theme 'monokai t)
+  (set-face-attribute 'fringe nil
+    :background (face-attribute 'default :background)))
 
 (defun theme/-init-powerline-evil ()
   "Apply colors to powerline-evil to match theme."
