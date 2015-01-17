@@ -43,7 +43,7 @@
   (unless (member package packages/-list)
     (setq packages/-list (push package packages/-list))))
 
-(defun inits/-bootstrap ()
+(defun inits/-init ()
   "Load inits, install required packages, then kick off init hook."
   (inits/-load)
   (packages/-install)
@@ -57,6 +57,16 @@
   "Load INIT if it has not been loaded already."
   (load (concat user-emacs-directory "init/" (symbol-name init))))
 
+(defun packages/-run-hook ()
+  "Initialize package system before loading inits."
+  (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                           ("marmalade" . "http://marmalade-repo.org/packages/")
+                           ("melpa" . "http://melpa.milkbox.net/packages/")))
+  (package-initialize)
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (add-hook 'after-init-hook 'inits/-init))
+
 (defun packages/-install ()
   "Install all packages defined in packages list."
   (mapcar 'packages/-install-package packages/-list))
@@ -67,12 +77,6 @@
     (package-install package)
     (require package)))
 
-(add-hook 'after-init-hook 'inits/-bootstrap)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
+(with-eval-after-load 'package (packages/-run-hook))
 
 ;;; init.el ends here
