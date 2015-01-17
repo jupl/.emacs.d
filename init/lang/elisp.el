@@ -15,7 +15,7 @@
   "Additional setup for Emacs Lisp mode."
   (lisp/init 'emacs-lisp-mode))
 
-(add-hook 'lisp/mode 'elisp/-init)
+(add-hook 'lisp/hook 'elisp/-init)
 (with-eval-after-load 'diminish (elisp/-diminish))
 (with-eval-after-load 'rainbow-mode
   (add-hook 'emacs-lisp-mode-hook 'rainbow-mode))
