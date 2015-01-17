@@ -22,6 +22,7 @@
                        appearance/theme
                        file/project
                        file/saveplace
+                       lang/clojure
                        lang/css
                        lang/dotnet
                        lang/elisp
