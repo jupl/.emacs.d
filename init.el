@@ -38,7 +38,8 @@
                        syntax/autopair
                        syntax/check
                        syntax/comment
-                       syntax/snippet))
+                       syntax/snippet
+                       ))
 
 (defun packages/add (package)
   "Add a PACKAGE to be installed later."
