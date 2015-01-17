@@ -42,7 +42,7 @@
 (setq-default version-control t)
 (setq-default backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq-default auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+  `((".*" ,temporary-file-directory t)))
 
 ;; Display options
 (setq-default initial-scratch-message "")
@@ -59,6 +59,7 @@
   (cd "~/"))
 (unless (and (display-graphic-p) (eq system-type 'darwin))
   (menu-bar-mode -1))
-(when (fboundp 'winner-mode) (winner-mode t))
+(when (fboundp 'winner-mode)
+  (winner-mode t))
 
 ;;; emacs.el ends here
