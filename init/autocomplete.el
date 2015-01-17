@@ -25,7 +25,8 @@
   (define-key company-active-map (kbd "M-n") nil)
   (define-key company-active-map (kbd "M-p") nil)
   (define-key company-active-map (kbd "C-<return>") 'company-select-next)
-  (define-key company-active-map (kbd "C-S-<return>") 'company-select-previous))
+  (define-key company-active-map (kbd "C-S-<return>")
+    'company-select-previous))
 
 (add-hook 'inits/hook 'autocomplete/-hook)
 (with-eval-after-load 'company (autocomplete/-init))
