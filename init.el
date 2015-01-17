@@ -9,7 +9,9 @@
 
 (defvar inits/hook)
 (defvar packages/-list '())
-(defvar inits/-list '( autocomplete
+(defvar inits/-list-loaded '())
+(defvar inits/-list '( ;; List of inits to load
+                       autocomplete
                        editorconfig
                        emacs
                        git
@@ -55,7 +57,9 @@
 
 (defun inits/-load-init (init)
   "Load INIT if it has not been loaded already."
-  (load (concat user-emacs-directory "init/" (symbol-name init))))
+  (unless (member init inits/-list-loaded)
+    (setq inits/-list-loaded (push init inits/-list-loaded))
+    (load (concat user-emacs-directory "init/" (symbol-name init)))))
 
 (defun packages/-run-hook ()
   "Initialize package system before loading inits."
