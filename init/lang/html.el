@@ -24,13 +24,7 @@
   (add-hook 'web-mode-hook 'tagedit-mode)
   (add-hook 'html-mode-hook 'web-mode))
 
-(defun html/-init-evil-leader ()
-  "Set up evil leader keys for web mode."
-  (with-eval-after-load 'web-mode
-    (evil-leader/set-key-for-mode 'web-mode)))
-
 (with-eval-after-load 'diminish (html/-diminish))
-;; (with-eval-after-load 'evil-leader (html/-init-evil-leader))
 (with-eval-after-load 'web-mode (html/-init-web))
 
 ;;; html.el ends here
