@@ -26,8 +26,7 @@
   "Set up Omnisharp."
   (setq-default omnisharp-auto-complete-want-documentation nil)
   (setq-default omnisharp-server-executable-path
-                (expand-file-name
-                  "~/.omnisharp/server/OmniSharp/bin/Debug/OmniSharp.exe"))
+    (expand-file-name "~/.omnisharp/server/OmniSharp/bin/Debug/OmniSharp.exe"))
   (add-hook 'csharp-mode-hook 'dotnet/-mode))
 
 (defun dotnet/-init-company ()
