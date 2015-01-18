@@ -20,7 +20,9 @@
   (define-key evil-normal-state-map (kbd "C-j") 'tabbar-ruler-backward)
   (define-key evil-normal-state-map (kbd "C-k") 'tabbar-ruler-forward)
   (define-key evil-normal-state-map (kbd "C-l")
-    'tabbar-ruler-tabbar-forward-group))
+    'tabbar-ruler-tabbar-forward-group)
+  (define-key evil-normal-state-map (kbd "C-S-l")
+    'tabbar-ruler-tabbar-backward-group))
 
 (defun tabbar/-init-projectile ()
   "Set up projectile integration with tabbar."
