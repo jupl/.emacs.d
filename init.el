@@ -60,10 +60,11 @@
   "Load INIT if it has not been loaded already."
   (unless (member init inits/-list-loaded)
     (setq inits/-list-loaded (push init inits/-list-loaded))
-    (load (concat user-emacs-directory "init/" (symbol-name init)))))
+    (load (concat user-emacs-directory "init/" (symbol-name init) ".el"))))
 
 (defun packages/-init ()
   "Initialize package system before loading inits."
+  (ignore-errors (load (concat user-emacs-directory "proxy.el")))
   (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                            ("marmalade" . "http://marmalade-repo.org/packages/")
                            ("melpa" . "http://melpa.milkbox.net/packages/")))
