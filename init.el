@@ -1,7 +1,8 @@
 ;;; init.el --- Configurations bootstrapper
 ;;;
 ;;; Commentary:
-;;; Load configuration files
+;;; Load configuration files. If unique configurations are required consider
+;;; leveraging local.el.
 ;;;
 ;;; Code:
 
@@ -56,6 +57,12 @@
   "Load all inits defined in inits list."
   (mapcar 'inits/-load-init inits/-list))
 
+(defun inits/-load-local ()
+  "Load local.el if it exists for machine- and user- specific configurations."
+  (let ((local-init (concat user-emacs-directory "local.el")))
+    (when (file-exists-p local-init)
+      (load local-init))))
+
 (defun inits/-load-init (init)
   "Load INIT if it has not been loaded already."
   (unless (member init inits/-list-loaded)
@@ -64,7 +71,6 @@
 
 (defun packages/-init ()
   "Initialize package system before loading inits."
-  (ignore-errors (load (concat user-emacs-directory "proxy.el")))
   (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                            ("marmalade" . "http://marmalade-repo.org/packages/")
                            ("melpa" . "http://melpa.milkbox.net/packages/")))
@@ -83,6 +89,7 @@
     (package-install package)
     (require package)))
 
+(inits/-load-local)
 (with-eval-after-load 'package (packages/-init))
 
 ;;; init.el ends here
