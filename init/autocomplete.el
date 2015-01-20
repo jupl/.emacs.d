@@ -9,7 +9,7 @@
 
 (defvar company-active-map)
 
-(defun autocomplete/-hook ()
+(defun autocomplete/-run-hook ()
   "Start company globally."
   (global-company-mode t))
 
@@ -28,7 +28,7 @@
   (define-key company-active-map (kbd "C-S-<return>")
     'company-select-previous))
 
-(add-hook 'inits/hook 'autocomplete/-hook)
+(add-hook 'inits/hook 'autocomplete/-run-hook)
 (with-eval-after-load 'company (autocomplete/-init))
 (with-eval-after-load 'diminish (autocomplete/-diminish))
 
