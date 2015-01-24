@@ -19,6 +19,9 @@
   "Additional setup to JS mode."
   (setq-default comment-start "// ")
   (setq-default comment-end "")
+  (push '("..." . ?…) prettify-symbols-alist)
+  (push '(">=" . ?≥) prettify-symbols-alist)
+  (push '("<=" . ?≤) prettify-symbols-alist)
   (push '("export" . ?◄) prettify-symbols-alist)
   (push '("from" . ?←) prettify-symbols-alist)
   (push '("function" . ?ƒ) prettify-symbols-alist)
