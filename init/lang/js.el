@@ -26,7 +26,6 @@
   (push '("require" . ?Я) prettify-symbols-alist)
   (push '("return" . ?●) prettify-symbols-alist)
   (push '("yield" . ?γ) prettify-symbols-alist)
-  (prettify-symbols-mode t)
   (tern-mode t))
 
 (defun js/-diminish ()

@@ -61,5 +61,6 @@
   (menu-bar-mode -1))
 (when (fboundp 'winner-mode)
   (winner-mode t))
+(global-prettify-symbols-mode t)
 
 ;;; emacs.el ends here
