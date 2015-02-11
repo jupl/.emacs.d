@@ -20,6 +20,7 @@
   (setq-default comment-start "// ")
   (setq-default comment-end "")
   (push '("..." . ?…) prettify-symbols-alist)
+  (push '("=>" . ?→) prettify-symbols-alist)
   (push '(">=" . ?≥) prettify-symbols-alist)
   (push '("<=" . ?≤) prettify-symbols-alist)
   (push '("export" . ?◄) prettify-symbols-alist)
