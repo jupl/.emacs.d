@@ -42,9 +42,7 @@
   (setq-default js2-mode-show-parse-errors nil)
   (setq-default js2-mode-show-strict-warnings nil)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-  (add-hook 'js2-mode-hook 'js/-mode)
-  (with-eval-after-load 'web-mode
-    (add-to-list 'auto-mode-alist '("\\.swig\\'" . web-mode))))
+  (add-hook 'js2-mode-hook 'js/-mode))
 
 (defun js/-init-company ()
   "Add JS specific packages to company mode."
@@ -55,9 +53,14 @@
   "Set up JSON mode."
   (add-to-list 'auto-mode-alist '("\\.jshintrc" . json-mode)))
 
+(defun js/-init-web ()
+  "Set up web mode for JS related templates."
+  (add-to-list 'auto-mode-alist '("\\.swig\\'" . web-mode)))
+
 (with-eval-after-load 'company (js/-init-company))
 (with-eval-after-load 'diminish (js/-diminish))
 (with-eval-after-load 'js2-mode (js/-init))
 (with-eval-after-load 'json-mode (js/-init-json))
+(with-eval-after-load 'web-mode (js/-init-web))
 
 ;;; js.el ends here
