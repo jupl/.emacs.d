@@ -35,6 +35,7 @@
                        lang/js
                        lang/lisp
                        lang/org
+                       lang/php
                        lang/ruby
                        syntax/autopair
                        syntax/check
