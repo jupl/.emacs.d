@@ -51,6 +51,9 @@
 
 (defun js/-init-json ()
   "Set up JSON mode."
+  (add-to-list 'auto-mode-alist '("\\.babelrc" . json-mode))
+  (add-to-list 'auto-mode-alist '("\\.bowerrc" . json-mode))
+  (add-to-list 'auto-mode-alist '("\\.eslintrc" . json-mode))
   (add-to-list 'auto-mode-alist '("\\.jshintrc" . json-mode)))
 
 (defun js/-init-web ()
