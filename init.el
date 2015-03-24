@@ -37,6 +37,7 @@
                        lang/org
                        lang/php
                        lang/ruby
+                       lang/swift
                        syntax/autopair
                        syntax/check
                        syntax/comment
