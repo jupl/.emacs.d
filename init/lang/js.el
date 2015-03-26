@@ -54,7 +54,8 @@
   (add-to-list 'auto-mode-alist '("\\.babelrc" . json-mode))
   (add-to-list 'auto-mode-alist '("\\.bowerrc" . json-mode))
   (add-to-list 'auto-mode-alist '("\\.eslintrc" . json-mode))
-  (add-to-list 'auto-mode-alist '("\\.jshintrc" . json-mode)))
+  (add-to-list 'auto-mode-alist '("\\.jshintrc" . json-mode))
+  (add-to-list 'auto-mode-alist '("\\.tern-project" . json-mode)))
 
 (defun js/-init-web ()
   "Set up web mode for JS related templates."
