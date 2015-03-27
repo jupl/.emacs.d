@@ -16,6 +16,7 @@
                        editorconfig
                        emacs
                        git
+                       rest
                        vim
                        appearance/cursor
                        appearance/dirtree
