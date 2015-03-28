@@ -21,6 +21,8 @@
 ;; Editor options
 (defalias 'yes-or-no-p 'y-or-n-p)
 (define-key global-map (kbd "RET") 'newline-and-indent)
+(define-key global-map (kbd "C-h h") nil)
+(define-key global-map (kbd "C-q") nil)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq-default truncate-lines t)
