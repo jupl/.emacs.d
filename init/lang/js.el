@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;; Configure JavaScript and JSON related packages. The following NPM pacakges
-;;; should be installed: jshint, jsonlint, tern.
+;;; should be installed: eshint, jsonlint, tern.
 ;;;
 ;;; Code:
 
