@@ -10,12 +10,14 @@
 (packages/add 'ruby-end)
 
 (defvar elixir-mode-hook)
+(defvar ruby-end-expand-keywords-before-re)
+(defvar ruby-end-check-statement-modifiers)
 
 (defun elixir/-mode ()
   "Add additional configuration to Elixir mode."
-  (set (make-variable-buffer-local 'ruby-end-expand-keywords-before-re)
+  (set (make-local-variable 'ruby-end-expand-keywords-before-re)
     "\\(?:^\\|\\s-+\\)\\(?:do\\)")
-  (set (make-variable-buffer-local 'ruby-end-check-statement-modifiers) nil)
+  (set (make-local-variable 'ruby-end-check-statement-modifiers) nil)
   (ruby-end-mode t))
 
 (defun elixir/-diminish ()
