@@ -1,5 +1,10 @@
 ;; -*- lexical-binding: t -*-
 
+(use-package mixed-pitch
+  :after (org)
+  :config
+  (add-to-list 'mixed-pitch-fixed-pitch-faces 'org-formula))
+
 (use-package org
   :ensure org-plus-contrib
   :general
@@ -55,8 +60,10 @@
     (setq
      org-latex-compiler "xelatex"
      org-latex-pdf-process `(,(concat prefix escape postfix))))
-  (add-to-list 'org-latex-logfiles-extensions "tex")
   (when (executable-find "pygmentize")
     (setq-default org-latex-listings 'minted)
-    (add-to-list 'org-latex-packages-alist '("" "minted"))
+    (add-to-list 'org-latex-packages-alist '("" "minted")))
+  :config
+  (add-to-list 'org-latex-logfiles-extensions "tex")
+  (when (executable-find "pygmentize")
     (add-to-list 'org-latex-logfiles-extensions "pyg")))

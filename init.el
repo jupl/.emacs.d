@@ -1,7 +1,9 @@
 ;; -*- lexical-binding: t -*-
 
 (setq
+ jupl-fixed-pitch (if (eq system-type 'darwin) "Fira Code" "Fira Mono")
  jupl-path (file-name-directory load-file-name)
+ jupl-variable-pitch "Fira Sans"
  use-package-always-defer t
  use-package-always-ensure t)
 
@@ -20,4 +22,4 @@
   (require 'use-package))
 
 ;; Load modules
-(mapc 'load (file-expand-wildcards (concat jupl-path "modules/*.el")))
+(mapc 'load-file (file-expand-wildcards (concat jupl-path "modules/*.el")))

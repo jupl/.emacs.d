@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t -*-
 
 (use-package evil-magit
+  :demand t
   :after (evil magit))
 
 (use-package gitconfig-mode)

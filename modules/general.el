@@ -6,7 +6,6 @@
    "TAB" 'indent-for-tab-command)
   (:prefix "SPC"
    :states '(normal visual)
-   "bb" 'list-buffers
    "hdf" 'describe-function
    "hdk" 'describe-key
    "hdm" 'describe-mode
