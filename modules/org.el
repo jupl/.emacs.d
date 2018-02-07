@@ -11,7 +11,7 @@
   (:keymaps 'org-mode-map
    :prefix ","
    :states '(normal visual)
-   "x" 'org-export-dispatch)
+   "x" #'org-export-dispatch)
   :init
   (setq
    org-export-allow-bind-keywords t

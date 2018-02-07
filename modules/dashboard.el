@@ -6,7 +6,7 @@
   :general
   (:prefix "SPC"
    :states '(normal visual)
-   "bh" 'projectile-invalidate-cache)
+   "bh" #'projectile-invalidate-cache)
   :config
   (setq
    dashboard-banner-logo-title nil

@@ -4,8 +4,8 @@
   :general
   (:prefix "SPC"
    :states '(normal visual)
-   "ft" 'treemacs-toggle
-   "fT" 'treemacs)
+   "ft" #'treemacs-toggle
+   "fT" #'treemacs)
   :config
   (when (member jupl-variable-pitch (font-family-list))
     (set-face-attribute 'treemacs-directory-face nil :family jupl-variable-pitch)
@@ -20,4 +20,4 @@
   :general
   (:prefix "SPC"
    :states '(normal visual)
-   "pt" 'treemacs-projectile))
+   "pt" #'treemacs-projectile))

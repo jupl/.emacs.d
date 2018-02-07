@@ -10,11 +10,21 @@
    evil-move-cursor-back nil)
   (evil-mode 1)
   :config
-  (evil-ex-define-cmd "bd[elete]" 'kill-this-buffer))
+  (define-key minibuffer-local-map
+    (kbd "ESC") #'keyboard-escape-quit)
+  (define-key minibuffer-local-ns-map
+    (kbd "ESC") #'keyboard-escape-quit)
+  (define-key minibuffer-local-completion-map
+    (kbd "ESC") #'keyboard-escape-quit)
+  (define-key minibuffer-local-must-match-map
+    (kbd "ESC") #'keyboard-escape-quit)
+  (define-key minibuffer-local-isearch-map
+    (kbd "ESC") #'keyboard-escape-quit)
+  (evil-ex-define-cmd "bd[elete]" #'kill-this-buffer))
 
 (use-package evil-nerd-commenter
   :after (evil)
   :general
   (:prefix "SPC"
    :states '(normal visual)
-   ";" 'evilnc-comment-or-uncomment-lines))
+   ";" #'evilnc-comment-or-uncomment-lines))

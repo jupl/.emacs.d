@@ -4,9 +4,9 @@
   :general
   (:prefix "SPC"
    :states '(normal visual)
-   "SPC" 'helm-M-x
-   "bb" 'helm-mini
-   "hi" 'helm-info-at-point)
+   "SPC" #'helm-M-x
+   "bb" #'helm-mini
+   "hi" #'helm-info-at-point)
   :init
   (setq helm-mode-handle-completion-in-region nil)
   (helm-mode 1)
